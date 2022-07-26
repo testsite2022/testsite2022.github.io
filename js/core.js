@@ -13,7 +13,7 @@ setUpAccount()}
 window.addEventListener('load',async()=>{web3=new Web3(new Web3.providers.HttpProvider("https://rpc-mainnet.matic.quiknode.pro"));web3.eth.setProvider(Web3.givenProvider);let accs=await window.ethereum.request({method:'eth_requestAccounts'});user.address=accs[0]
 setUpContracts()
 console.log("conn",accs[0])
-web3.eth.net.getId().then(netID=>{if(netID!==137)alert("You are connected to a wrong network, please change to BSC network.")});try{await ethereum.enable();}catch(error){console.log('user rejected permission');}})
+web3.eth.net.getId().then(netID=>{if(netID!==137)alert("You are connected to a wrong network, please change to Polygon network.")});try{await ethereum.enable();}catch(error){console.log('user rejected permission');}})
 function setUpAccount(){updateHeadAddress()
 if($('.ref-link')[0])$('.ref-link')[0].value="https://avaricetoken.io/?ref="+user.address
 if(typeof userAccConnected=="function")userAccConnected()}
