@@ -102,7 +102,7 @@ $('.shared-header')[0].innerHTML=`
 
 
 
-   <a class="t-pp pg_tt_buyandsell" href="buyandsell.html">Buy&Sell</a>
+
 
    <a class="t-pp pg_tt_faq" href="faq.html">FAQ</span>
 
