@@ -33,8 +33,8 @@ if(triedIdLast<count){getOneStake(triedIdLast)}else if(triedIdLast==count){setTi
 const actionButton_collect=`<div data-v-254b7dbb="" class="d-flex align-items-center" onclick="endStake(this.parentNode.id)" style="background: linear-gradient(to bottom right, #3ade8b 0%, #0bb8ae 100%) !important; border-radius: 25px;color: #ffffffc9;font-weight: 900;font-size: 15px;padding: 0;cursor: pointer;box-shadow: 1px 2px 5px #2cd2968f;">
 <div data-v-254b7dbb="" class="font-small-2 text-muted bt-cl">Collect</div>
 </div>`
-const actionButton_cancel=`<div onclick="location.href='buyandsell.html'" data-v-254b7dbb="" class="d-flex align-items-center" style="background: linear-gradient(to bottom right, #fc614b 0%, #ed3593 100%) !important; border-radius: 25px;color: #ffffffc9;font-weight: 900;font-size: 15px;padding: 0;cursor: pointer;box-shadow: 1px 2px 5px #57193354;">
-<div data-v-254b7dbb="" class="font-small-2 text-muted">Sell Stake</div>
+const actionButton_cancel=`<div data-v-254b7dbb="" class="d-flex align-items-center" style="background: linear-gradient(to bottom right, #34e28a8f 0%, #1a625d9e 100%) !important;border-radius: 25px;color: #ffffffc9;font-weight: 900;font-size: 15px;padding: 0;box-shadow: none;">
+<div data-v-254b7dbb="" class="font-small-2 text-muted">Staked</div>
 </div>`
 const actionButton_collected=`<div data-v-254b7dbb="" class="d-flex align-items-center" style="background: linear-gradient(to bottom right, #34e28a8f 0%, #1a625d9e 100%) !important;border-radius: 25px;color: #ffffffc9;font-weight: 900;font-size: 15px;padding: 0;box-shadow: none;">
 <div data-v-254b7dbb="" class="font-small-2 text-muted">Collected</div>
