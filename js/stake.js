@@ -1,5 +1,5 @@
 function doStake(){if(user.balance/1e18<parseFloat($('.stake-inp-amount')[0].value)){doAlert("Not enough balance!",2)}else if(!$('.stake-inp-amount')[0].value||!$('.stake-inp-days')[0].value){doAlert("Undefined Entered Data",2)}else{$('.do-stake-btn-txt')[0].innerHTML="..."
-mainContract.methods.EnterStake(web3.utils.toWei($('.stake-inp-amount')[0].value,'ether'),parseInt($('.stake-inp-days')[0].value)).send({from:user.address,shouldPollResponse:false}).then(res=>{doAlert(`Successfully staked ${parseFloat($('.stake-inp-amount')[0].value)} AVC for ${parseInt($('.stake-inp-days')[0].value)} days.`,3)
+mainContract.methods.EnterStake(web3.utils.toWei($('.stake-inp-amount')[0].value,'ether'),parseInt($('.stake-inp-days')[0].value)).send({from:user.address,shouldPollResponse:false}).then(res=>{doAlert(`Successfully staked ${parseFloat($('.stake-inp-amount')[0].value)} RIP for ${parseInt($('.stake-inp-days')[0].value)} days.`,3)
 $('.do-stake-btn-txt')[0].innerHTML="Stake"
 refreshMyStakes()}).catch(err=>{doAlert("Something went wrong!",2)
 $('.do-stake-btn-txt')[0].innerHTML="Stake"
@@ -151,10 +151,10 @@ mainContract.methods.overall_collectedBonusTokens().call({shouldPollResponse:tru
 mainContract.methods.mapMemberLobby_overallData(user.address).call({shouldPollResponse:true,}).then(res=>{$('.user-data-3')[0].value=(parseInt(res.overall_stakedTokens)/1e18).toFixed(2)})
 mainContract.methods.mapMemberLobby_overallData(user.address).call({shouldPollResponse:true,}).then(res=>{$('.user-data-4')[0].value=(parseInt(res.overall_collectedDivs)/1e18).toFixed(3)})
 mainContract.methods.referrerBonusesPaid(user.address).call({shouldPollResponse:true,}).then(res=>{$('.user-data-5')[0].value=(parseInt(res)/1e18).toFixed(3)})
-mainContract.methods.daysActiveInStakeTokensIncrese(currentDay+1).call({shouldPollResponse:true,}).then(res=>{$('.uns-12')[0].innerHTML=(parseInt(res)/1e18).toFixed(2)+" AVC"})
+mainContract.methods.daysActiveInStakeTokensIncrese(currentDay+1).call({shouldPollResponse:true,}).then(res=>{$('.uns-12')[0].innerHTML=(parseInt(res)/1e18).toFixed(2)+" RIP"})
 web3.eth.getBalance("0x8e065dC08a2943971eCc96A45993c312716BB40d",function(err,result){if(err){console.log(err)}else{$('.uns-13')[0].innerHTML=(web3.utils.fromWei(result)*94/100).toFixed(2)+" MATIC"}})}
 setInterval(()=>{refreshGlobalData()},1000*30)
 $('.pg_tt_staking')[0].style.color="white"
-$('.stake-inp-amount')[0].addEventListener('input',function(evt){if($('.stake-inp-days')[0].value){$('.uns-11')[0].innerHTML=calcBonusToken($('.stake-inp-days')[0].value,this.value)+" AVC"
-$('.uns-11')[0].style.color="#000000b3"}});$('.stake-inp-days')[0].addEventListener('input',function(evt){if($('.stake-inp-amount')[0].value){$('.uns-11')[0].innerHTML=calcBonusToken(this.value,$('.stake-inp-amount')[0].value)+" AVC"
+$('.stake-inp-amount')[0].addEventListener('input',function(evt){if($('.stake-inp-days')[0].value){$('.uns-11')[0].innerHTML=calcBonusToken($('.stake-inp-days')[0].value,this.value)+" RIP"
+$('.uns-11')[0].style.color="#000000b3"}});$('.stake-inp-days')[0].addEventListener('input',function(evt){if($('.stake-inp-amount')[0].value){$('.uns-11')[0].innerHTML=calcBonusToken(this.value,$('.stake-inp-amount')[0].value)+" RIP"
 $('.uns-11')[0].style.color="#000000b3"}});

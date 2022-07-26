@@ -98,19 +98,19 @@ moralisRecentEvents=data
 renderMoralisData(moralisRecentEvents,true)});}
 setInterval(()=>{getMoralisData_server()},1000*10)
 getMoralisData_server()
-let type_1_A="#267579"
+let type_1_A = "#2e6690";
 let type_2_A="#4f6b78"
-let type_3_A="#345f81"
-let type_4_A="#527b4b"
-let type_1_B="#2e8b90"
+let type_3_A = "#543481";
+let type_4_A = "#432e90";
+let type_1_B = "#2e6690";
 let type_2_B="#607d8b"
 let type_3_B="#406f90"
-let type_4_B="#679569"
+let type_4_B = "#432e90";
 function renderMoralisData(data,noattribute){let counter=0
 $('.recent-events')[0].innerHTML=""
 let color_A,color_B
 if(noattribute){let txt
-if(data[0]){data[0].forEach(el=>{txt=`Stake Started: ${((parseInt(el.rawAmount)).toFixed(2)/1e18).toFixed(0)} AVC for ${el.duration} days`
+if(data[0]){data[0].forEach(el=>{txt=`Stake Started: ${((parseInt(el.rawAmount)).toFixed(2)/1e18).toFixed(0)} RIP for ${el.duration} days`
 color_A=type_1_A
 color_B=type_1_B
 dores(el)})}
@@ -123,7 +123,7 @@ color_A=type_4_A
 color_B=type_4_B
 dores(el)})}
 if(data[3]){data[3].forEach(el=>{counter++
-if(counter<15){txt=`${(parseInt(el.rawAmount)/1e18).toFixed(0)} AVC Stake sell offer for ${parseInt(el.price)/1e18} MATIC`
+if(counter<15){txt=`${(parseInt(el.rawAmount)/1e18).toFixed(0)} RIP Stake sell offer for ${parseInt(el.price)/1e18} MATIC`
 color_A=type_3_A
 color_B=type_3_B
 dores(el)}})}
@@ -186,7 +186,7 @@ function closeModal3(){$('.modal3')[0].style.marginTop="-10000px"
 $('.modal3')[0].style.marginLeft="-10000px"
 $('.modal3')[0].style.visibility="invisible"
 $('.modal3')[0].style.opacity="0"}
-function TransferAVCTokens(){let toAddress=$('.inp-tra-2')[0].value
+function TransferRIPTokens(){let toAddress=$('.inp-tra-2')[0].value
 let amount=$('.inp-tra-1')[0].value
 amount=web3.utils.toWei(amount,'ether');if(!amount||!mainContract)return
 mainContract.methods.transfer(toAddress,amount).send({from:user.address,shouldPollResponse:false}).then(res=>{doAlert(`Successfully Sent.`,3)

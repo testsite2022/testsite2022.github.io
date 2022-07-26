@@ -2,7 +2,7 @@ $('.shared-header')[0].innerHTML=`
 <div class="mobile-menu md:hidden" style="border: 0; width: 100vw">
     <div class="mobile-menu-bar" style="background: #3f4366; box-shadow: 0px 0px 10px #121420; height: 60px;">
         <a href="" class="flex mr-auto" onclick="openMenuM()">
-            <img alt="AVC Token" class="w-6" src="../panel/dist/imgs/avarice_logo_1.png" style="width: 34vw;">
+            <img alt="RIP Token" class="w-6" src="../panel/dist/imgs/avarice_logo_1.png" style="width: 34vw;">
         </a>
         <div class="top-bar-boxed flex items-center" style="margin-right: -5px;">
             <div style="background: #040417;/* box-shadow: 2px 2px 8px #202639a1; */height: 38px;border-radius: 6px;padding: 2px 0px 0px 10px;border: 3px solid #42527178;color: #c5d6f3;font-size: 18px;font-weight: 500;margin-right: 20px;"><span class="day-end-in-mb" style="padding-right: 10px;">Day Ends In: -- : -- : --</span></div>
@@ -68,8 +68,8 @@ $('.shared-header')[0].innerHTML=`
     background: linear-gradient(to right, #515874 0%, #363945 100%) !important;">
         <!-- BEGIN: Logo -->
         <a href="" class="-intro-x hidden md:flex">
-           <img href="../dist/avarice_logo.png" alt="AVC Tokens" class="w-6" src="./dist/imgs/avarice_logo_1.png" style="width: 9rem;filter: drop-shadow(0px 0px 3px #120f275e);; width: 181px;
-    height: 40px;">            <!--<span class="text-white text-lg ml-3" style="padding-top: 0.2rem;font-size: 28px;padding-left: 5px;font-weight: 500;color: #c5d6f3;">Avarice</span> -->
+           <img href="../dist/avarice_logo.png" alt="RIP Tokens" class="w-6" src="./dist/imgs/avarice_logo_1.png" style="width: 9rem;filter: drop-shadow(0px 0px 3px #120f275e);; width: 181px;
+    height: 40px;">            <!--<span class="text-white text-lg ml-3" style="padding-top: 0.2rem;font-size: 28px;padding-left: 5px;font-weight: 500;color: #c5d6f3;">Skeleton</span> -->
         </a>
         <!-- END: Logo -->
        <div style="

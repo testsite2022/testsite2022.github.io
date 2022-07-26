@@ -183,7 +183,7 @@ $('.grid-container-fs')[0].innerHTML+=`
             display: inline-block;
             float: left;
             padding-left: 10px;
-        ">${(parseInt(itm.tokenValue)/1e18).toFixed(3)} AVC</span><span style="
+        ">${(parseInt(itm.tokenValue)/1e18).toFixed(3)} RIP</span><span style="
             color: #ffffffb0;
             display: inline-block;
             float: left;
@@ -203,7 +203,7 @@ $('.grid-container-fs')[0].innerHTML+=`
             display: inline-block;
             float: left;
             padding-left: 10px;
-        ">${calcBonusToken(parseInt(itm.endDay)-parseInt(itm.startDay),parseInt(itm.tokenValue)/1e18).toFixed(2)} AVC</span><div class="v-i-77-${ide} v-i-7" onclick="buyAStake('${itm.userAddress}', ${itm.stakeId})" style="
+        ">${calcBonusToken(parseInt(itm.endDay)-parseInt(itm.startDay),parseInt(itm.tokenValue)/1e18).toFixed(2)} RIP</span><div class="v-i-77-${ide} v-i-7" onclick="buyAStake('${itm.userAddress}', ${itm.stakeId})" style="
             background: linear-gradient(to bottom right, #f3dc57 0%, #fd991a 100%) !important;
             /* border-radius: 25px; */
             color: #ffffffc9;
@@ -261,4 +261,4 @@ else if(incomingSortType==3){data.sort((b,a)=>parseInt(a.tokenValue)-parseInt(b.
 else if(incomingSortType==4){data.sort((b,a)=>parseInt(a.endDay)-parseInt(b.endDay));}}
 function setavrgPrice(){tryagaavg()
 function tryagaavg(){setTimeout(()=>{if(avgPrice){setAvgPriceFinal()}else{tryagaavg()}},500)}
-function setAvgPriceFinal(){$('.price-avr-txt')[0].innerHTML=`Average AVC price [past 3 days]: ${avgPrice.toFixed(5)} MATIC`}}
+function setAvgPriceFinal(){$('.price-avr-txt')[0].innerHTML=`Average RIP price [past 3 days]: ${avgPrice.toFixed(5)} MATIC`}}
