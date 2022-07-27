@@ -37,8 +37,8 @@ $('.shared-header')[0].innerHTML=`
                 </a>
             </li>
             <li style="border-color: #93939330;
-            border-bottom-width: 2px;" onclick="location.href='buyandsell.html';">
-                <a href="buyandsell.html" class="menu">
+            border-bottom-width: 2px;" onclick="location.href='lottery.html';">
+                <a href="lottery.html" class="menu">
                     <div class="menu__icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shuffle"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg> </div>
                     <div class="menu__title">Buy and sell</div>
                 </a>
@@ -99,6 +99,8 @@ $('.shared-header')[0].innerHTML=`
    <a class="t-pp pg_tt_staking" href="stake.html">Staking</a>
 
    <a class="t-pp pg_tt_auction" href="lobby.html">Lobby</a>
+
+   <a class="t-pp pg_tt_auction" href="lottery.html">Lottery</a>
 
 
 
