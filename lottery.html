@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173014643-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-173014643-1");
+    </script>
+    <meta charset="utf-8" />
+    <link href="dist/imgs/avarice_logo_3.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Defi at Its Purest" />
+    <meta name="keywords" content="skeleton, crypto, bitcoin, ethereum, staking, skeleton token, BSC" />
+    <meta name="author" content="LEFT4CODE" />
+    <title>Skeleton - Lobby</title>
+    <link rel="stylesheet" href="dist/custom.css" />
+    <link rel="stylesheet" href="dist/css/app.css" />
+    <link rel="stylesheet" href="dist/cAlert.css" />
+    <script src="https://unpkg.com/moralis@1.5.5/dist/moralis.js"></script>
+  </head>
+  <script src="./dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <body class="app">
+    <div class="shared-header" style="position: fixed;z-index: 100;width: 100%;"></div>
+    <div class="alert-holder">
+      <div class="alert-tb rounded-md flex items-center px-5 py-4 mb-2 bg-theme-18 text-theme-9" style="display: none; position: fixed; width: fit-content; right: 10px; top: 9px; z-index: 10000; opacity: 0.96; padding-left: 6%; padding-right: 6%;">
+        <i data-feather="alert-circle" class="w-6 h-6 mr-2" style="display: inline-block;"></i>
+        <span class="alert-inner" style="display: inline-block;"></span>
+      </div>
+      <div class="alert-tb rounded-md flex items-center px-5 py-4 mb-2 bg-theme-17 text-theme-11" style="display: none; position: fixed; width: fit-content; right: 10px; top: 9px; z-index: 10000; opacity: 0.96; padding-left: 6%; padding-right: 6%;">
+        <i data-feather="alert-circle" class="w-6 h-6 mr-2" style="display: inline-block;"></i>
+        <span class="alert-inner" style="display: inline-block;"></span>
+      </div>
+      <div class="alert-tb rounded-md flex items-center px-5 py-4 mb-2 bg-theme-31 text-theme-6" style="display: none; position: fixed; width: fit-content; right: 10px; top: 9px; z-index: 10000; opacity: 0.96; padding-left: 6%; padding-right: 6%;">
+        <i data-feather="alert-circle" class="w-6 h-6 mr-2" style="display: inline-block;"></i>
+        <span class="alert-inner" style="display: inline-block;"></span>
+      </div>
+    </div>
+    <div>
+      <div class="modal3" id="button-modal-enter-lobby" style=" text-align: -webkit-center; background: #2f2f4c85; z-index: 10000; margin-top: auto !important;
+        margin-left: auto !important; margin-top: -10000px;
+    margin-left: -10000px;
+    background: rgb(18 15 39 / 60%);
+    transition: visibility 0 linear 0.2s,opacity .2s 0;
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #FFF;">
+        <div class="modal__content relative" style="background: #ccd3df;border-radius: 10px;box-shadow: 0px 0px 30px #1010188c;margin-top: 200px;border: 4px solid #606060;width: fit-content;">
+          <a data-dismiss="modal3" href="javascript:;" onclick="closeModal3()" class="absolute right-0 top-0 mt-3 mr-3" style="z-index: 10000000;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close-modal-a w-8 h-8 text-gray-500">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </a>
+          <div class="intro-y col-span-12 sm:col-span-6" style="padding-top: 50px;padding: 50px 100px 20px;display: inline-block;padding: 20px;width: 100%;">
+            <div style="font-weight: 900;color: #6d7076;padding-bottom: 3px;float: left;width: auto;font-size: 16px;padding-right: 6px;padding-top: 9px;">Transfer</div>
+            <input class="auction-amount-entr input w-full border flex-1 inp-tra-1" placeholder="1000 RIP" style="color: #abbac6;font-weight: 700;background: white;border: 3px solid #b4b9c4;box-shadow: 2px 4px 5px #b4b9c4;float: left;width: 15%;" type="number">
+            <div style="font-weight: 900;color: #6d7076;padding-bottom: 3px;float: left;width: auto;padding-right: 6px;padding-left: 6px;padding-top: 9px;font-size: 16px;">RIP tokens to</div>
+            <input class="auction-amount-entr input w-full border flex-1 inp-tra-2" placeholder="0x0000..." style="color: #abbac6;font-weight: 700;background: white;border: 3px solid #b4b9c4;box-shadow: 2px 4px 5px #b4b9c4;float: left;width: 30%;">
+            <button class="au-ent" type="button" data-dismiss="modal3" style="margin: 4px 20px 0px 20px;border-radius: 7px;display: inline-block;width: 120px;height: 36px;text-align: center;cursor: pointer;background: linear-gradient(to bottom right, #4c98af 0%, #0881b9 100%) !important;box-shadow: 2px 4px 4px #1a9f755c;color: #ffffffa8;font-family: 'Montserrat-b1';font-size: 16px; display: inline-block;
+            float: left;" onclick="TransferRIPTokens()"> SEND</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="button-modal-enter-lobby" style=" background: #2f2f4c85; z-index: 10000; margin-top: auto !important;
+        margin-left: auto !important;">
+        <div class="modal__content relative" style="background: #ccd3df;border-radius: 10px;box-shadow: 0px 0px 30px #1010188c;margin-top: 200px;border: 4px solid #606060;">
+          <a data-dismiss="modal" href="javascript:;" onclick="closeModal()" class="absolute right-0 top-0 mt-3 mr-3" style="z-index: 10000000;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close-modal-a w-8 h-8 text-gray-500">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </a>
+          <div class="intro-y col-span-12 sm:col-span-6" style="padding-top: 50px; padding: 50px 100px 20px;">
+            <div style="font-weight: 900;color: #6d7076; padding-bottom: 3px;">Amount of Binance Coin (MATIC) to Enter:</div>
+            <input type="number" class="auction-amount-entry input w-full border flex-1 stake-inp-amount" placeholder="0.1" style="color: #abbac6;font-weight: 700;background: white;border: 3px solid #b4b9c4;box-shadow: 2px 4px 5px #b4b9c4;">
+          </div>
+          <div class="px-5 pb-8 text-center" style="padding: 20px;">
+            <button class="au-ent" type="button" data-dismiss="modal" class="button w-24 bg-theme-1 text-white" style="width: auto;background: linear-gradient(to bottom right, #4ca3af 0%, #006696 100%) !important;width: 100%;box-shadow: 0px 2px 4px #1a9f7582;color: #ffffffa8;font-family: 'Montserrat-b1';font-size: 16px;" onclick="enterLobbyFinal()">Enter Auction</button>
+          </div>
+        </div>
+      </div>
+      <div class="l-12-b2" style="display: inline-block;width: calc(100% - 12%);position: absolute;right: 20px;float: right;padding-left: 44px;padding-top: 38px;
+
+            ">
+        <div class="box-body intro-y box lg:mt-5" style="background: #2e2e49; border-radius: 9px; background: transparent !important; box-shadow: none;">
+          <div class="p-5" style="height: 80px; position: relative; padding: 0px;">
+            <div class="card-body sm-mb-44" style="">
+              <div class="row" style="display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: nowrap; -ms-flex: 0 0 25%; padding-left: 0px; padding-right: 1.6rem; height: 80px;">
+                <div class="box-body intro-y box col-sm-6 col-xl-3 mb-2 mb-xl-0 nnb-32" style="-webkit-box-flex: 0; -ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; margin: 0 0.5rem 0 0; padding: 0 2%;">
+                  <div class="media" style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; height: 80px;">
+                    <div class="media-body my-auto" style="flex: 1;">
+                      <h4 class="font-weight-bolder mb-0" style="font-size: 14px;">Largest Deposit Today</h4>
+                      <p class="card-text font-small-3 mb-0 lt-32" style="font-size: 18px; font-weight: bold; font-family: 'Montserrat-b1';"></p>
+                    </div>
+                    
+                    <div class="media-body my-auto media-aside mr-2 align-self-start" style="
+                                                                width: 48px;
+                                                                height: 48px;
+                                                                background-color: rgba(115, 103, 240, 0.12);
+                                                                color: #7367f0;
+                                                                border-radius: 50% !important;
+                                                                display: inline-block;
+                                                                margin-right: 0;
+                                                                box-shadow: 0 5px 10px #efc2c9;
+                                                            ">
+                      <span class="b-avatar badge-light-primary rounded-circle" style="text-align: center; box-shadow: 0 5px 10px #efc2c9;">
+                        <span class="b-avatar-custom" style="
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                        overflow: hidden;
+                                                                        display: -webkit-box;
+                                                                        display: -ms-flexbox;
+                                                                        display: flex;
+                                                                        -webkit-box-pack: center;
+                                                                        -ms-flex-pack: center;
+                                                                        justify-content: center;
+                                                                        -webkit-box-align: center;
+                                                                        -ms-flex-align: center;
+                                                                        align-items: center;
+                                                                        -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                        -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                        background-image: linear-gradient(to bottom right, #f1ed64 0%, #ff8707 100%) !important;
+                                                                        border-radius: 50%;
+                                                                    ">
+                          <img src="./dist/matic.png" style=" width: 60%; ">
+                        </span>
+                      </span>
+                    </div>
+                  
+                    </div>
+                </div>
+
+                <div class="box-body intro-y box col-sm-6 col-xl-3 mb-2 mb-xl-0 nnb-32" style="-webkit-box-flex: 0; -ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; margin: 0 0.5rem 0 0; padding: 0 2%;">
+                    <div class="media" style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; height: 80px;">
+                      <div class="media-body my-auto" style="flex: 1;">
+                        <h4 class="font-weight-bolder mb-0" style="font-size: 14px;">Winner Deposit Yesterday</h4>
+                        <p class="card-text font-small-3 mb-0 lt-37" style="font-size: 18px; font-weight: bold; font-family: 'Montserrat-b1';"></p>
+                      </div>
+                      
+                      <div class="media-body my-auto media-aside mr-2 align-self-start" style="
+                                                                  width: 48px;
+                                                                  height: 48px;
+                                                                  background-color: rgba(115, 103, 240, 0.12);
+                                                                  color: #7367f0;
+                                                                  border-radius: 50% !important;
+                                                                  display: inline-block;
+                                                                  margin-right: 0;
+                                                                  box-shadow: 0 5px 10px #efc2c9;
+                                                              ">
+                        <span class="b-avatar badge-light-primary rounded-circle" style="text-align: center; box-shadow: 0 5px 10px #efc2c9;">
+                          <span class="b-avatar-custom" style="
+                                                                          width: 100%;
+                                                                          height: 100%;
+                                                                          overflow: hidden;
+                                                                          display: -webkit-box;
+                                                                          display: -ms-flexbox;
+                                                                          display: flex;
+                                                                          -webkit-box-pack: center;
+                                                                          -ms-flex-pack: center;
+                                                                          justify-content: center;
+                                                                          -webkit-box-align: center;
+                                                                          -ms-flex-align: center;
+                                                                          align-items: center;
+                                                                          -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                          -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                          background-image: linear-gradient(to bottom right, #f1ed64 0%, #ff8707 100%) !important;
+                                                                          border-radius: 50%;
+                                                                      ">
+                            <img src="./dist/matic.png" style=" width: 60%; ">
+                          </span>
+                        </span>
+                      </div>
+                    
+                      </div>
+                  
+                <div class="box-body intro-y box col-sm-6 col-xl-3 mb-2 mb-xl-0 nnb-33" style="-webkit-box-flex: 0; -ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; margin: 0 0.5rem 0 0; padding: 0 2%;">
+                  <div class="media" style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; height: 80px;">
+                    <div class="media-body my-auto" style="flex: 1;">
+                      <h4 class="font-weight-bolder mb-0" style="font-size: 14px;">Biggest depositor today so far</h4>
+                      <p class="card-text font-small-3 mb-0 lt-33" style="font-size: 18px; font-weight: bold; font-family: 'Montserrat-b1';">--</p>
+                    </div>
+                    <div class="media-body my-auto media-aside mr-2 align-self-start" style="
+                                                                width: 48px;
+                                                                height: 48px;
+                                                                background-color: rgba(115, 103, 240, 0.12);
+                                                                color: #7367f0;
+                                                                border-radius: 50% !important;
+                                                                display: inline-block;
+                                                                margin-right: 0;
+                                                                box-shadow: 0 5px 10px #e4cbfb;
+                                                            ">
+                      <span class="b-avatar badge-light-primary rounded-circle" style="text-align: center;">
+                        <span class="b-avatar-custom" style="
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                        overflow: hidden;
+                                                                        display: -webkit-box;
+                                                                        display: -ms-flexbox;
+                                                                        display: flex;
+                                                                        -webkit-box-pack: center;
+                                                                        -ms-flex-pack: center;
+                                                                        justify-content: center;
+                                                                        -webkit-box-align: center;
+                                                                        -ms-flex-align: center;
+                                                                        align-items: center;
+                                                                        -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                        -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                        background: linear-gradient(to bottom right, #9070ff 0%, #ff5d9e 100%) !important;
+                                                                        border-radius: 50%;
+                                                                    ">
+  
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box-body intro-y box col-sm-6 col-xl-3 mb-2 mb-xl-0 nnb-33" style="-webkit-box-flex: 0; -ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; margin: 0 0.5rem 0 0; padding: 0 2%;">
+                <div class="media" style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; height: 80px;">
+                  <div class="media-body my-auto" style="flex: 1;">
+                    <h4 class="font-weight-bolder mb-0" style="font-size: 14px;">Winner from yesterday</h4>
+                    <p class="card-text font-small-3 mb-0 lt-34" style="font-size: 18px; font-weight: bold; font-family: 'Montserrat-b1';">--</p>
+                  </div>
+                  <div class="media-body my-auto media-aside mr-2 align-self-start" style="
+                                                              width: 48px;
+                                                              height: 48px;
+                                                              background-color: rgba(115, 103, 240, 0.12);
+                                                              color: #7367f0;
+                                                              border-radius: 50% !important;
+                                                              display: inline-block;
+                                                              margin-right: 0;
+                                                              box-shadow: 0 5px 10px #e4cbfb;
+                                                          ">
+                    <span class="b-avatar badge-light-primary rounded-circle" style="text-align: center;">
+                      <span class="b-avatar-custom" style="
+                                                                      width: 100%;
+                                                                      height: 100%;
+                                                                      overflow: hidden;
+                                                                      display: -webkit-box;
+                                                                      display: -ms-flexbox;
+                                                                      display: flex;
+                                                                      -webkit-box-pack: center;
+                                                                      -ms-flex-pack: center;
+                                                                      justify-content: center;
+                                                                      -webkit-box-align: center;
+                                                                      -ms-flex-align: center;
+                                                                      align-items: center;
+                                                                      -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                      -webkit-mask-image: radial-gradient(#fff, #000);
+                                                                      background: linear-gradient(to bottom right, #9070ff 0%, #ff5d9e 100%) !important;
+                                                                      border-radius: 50%;
+                                                                  ">
+
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <style>
+      .floating {
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        margin-top: 5px;
+      }
+
+      @keyframes floating {
+        from {
+          transform: translate(0, 0px);
+        }
+
+        23% {
+          transform: translate(0, 10px);
+        }
+
+        to {
+          transform: translate(0, -0px);
+        }
+      }
+    </style>
+
+    <script>
+      function doAlert(text, num) {
+        $(`.alert-${num}-txt`)[0].innerHTML = text
+        $(`.alert-${num}`).addClass("show");
+        $(`.alert-${num}`).removeClass("hide");
+        $(`.alert-${num}`).addClass("showAlert");
+        setTimeout(function() {
+          $(`.alert-${num}`).removeClass("show");
+          $(`.alert-${num}`).addClass("hide");
+        }, 3000);
+      }
+    </script>
+    <a class="btn-f-style" href="#" data-title="Awesome Button"></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      // var web3 = new Web3();
+      // web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+    </script>
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/web3.min.js"></script>
+    <script src="./shared/header.js"></script>
+    <script src="./js/auction.js"></script>
+    <script src="./js/core.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="dist/js/app.js"></script>
+  </body>
+</html>
