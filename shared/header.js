@@ -102,10 +102,6 @@ $('.shared-header')[0].innerHTML=`
 
    <a class="t-pp pg_tt_auction" href="lottery.html">Lottery</a>
 
-
-
-
-
    <a class="t-pp pg_tt_faq" href="faq.html">FAQ</span>
 
    <a class="t-pp pg_tt_faq" onclick="openModal3()">Tokens Transfer</a>
