@@ -80,7 +80,7 @@ function refreshGlobalData() {
 	}).then(res => {
 		$('.lt-32')[0].innerHTML = (parseInt(res) / 1e18).toFixed(5)
 	})
-    mainContract.methods.maxDepositYesterday().call({
+    mainContract.methods.maxDepositAmountYesterday().call({
 		shouldPollResponse: true,
 	}).then(res => {
 		$('.lt-37')[0].innerHTML = (parseInt(res) / 1e18).toFixed(5)
