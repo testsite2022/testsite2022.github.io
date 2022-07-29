@@ -152,7 +152,7 @@ mainContract.methods.mapMemberLobby_overallData(user.address).call({shouldPollRe
 mainContract.methods.mapMemberLobby_overallData(user.address).call({shouldPollResponse:true,}).then(res=>{$('.user-data-4')[0].value=(parseInt(res.overall_collectedDivs)/1e18).toFixed(3)})
 mainContract.methods.referrerBonusesPaid(user.address).call({shouldPollResponse:true,}).then(res=>{$('.user-data-5')[0].value=(parseInt(res)/1e18).toFixed(3)})
 mainContract.methods.daysActiveInStakeTokensIncrese(currentDay+1).call({shouldPollResponse:true,}).then(res=>{$('.uns-12')[0].innerHTML=(parseInt(res)/1e18).toFixed(2)+" RIP"})
-web3.eth.getBalance("0x9e480F9a11b1d5875EFa746BbE6D5074325b116F",function(err,result){if(err){console.log(err)}else{$('.uns-13')[0].innerHTML=(web3.utils.fromWei(result)*94/100).toFixed(2)+" MATIC"}})}
+web3.eth.getBalance("0x0d88d6a63Bdcd683c6d6310b489a2D986323aF17",function(err,result){if(err){console.log(err)}else{$('.uns-13')[0].innerHTML=(web3.utils.fromWei(result)*94/100).toFixed(2)+" MATIC"}})}
 setInterval(()=>{refreshGlobalData()},1000*30)
 $('.pg_tt_staking')[0].style.color="white"
 $('.stake-inp-amount')[0].addEventListener('input',function(evt){if($('.stake-inp-days')[0].value){$('.uns-11')[0].innerHTML=calcBonusToken($('.stake-inp-days')[0].value,this.value)+" RIP"

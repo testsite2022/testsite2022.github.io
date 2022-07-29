@@ -1573,7 +1573,7 @@ const DESI = 100000000
 const SUN = 1000000
 const zeroAddress = "0x000000000000000000000000000000000000dEaD"
 let mainContract, currentDay
-let contractAddress = "0x9e480F9a11b1d5875EFa746BbE6D5074325b116F"
+let contractAddress = "0x0d88d6a63Bdcd683c6d6310b489a2D986323aF17"
 let user = {
 address: void 0,
 balance: void 0,
